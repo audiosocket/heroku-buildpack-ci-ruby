@@ -361,7 +361,7 @@ ERROR
   # runs bundler to install the dependencies
   def build_bundler
     log("bundle") do
-      bundle_without = ENV["BUNDLE_WITHOUT"] || "development:test"
+      bundle_without = ENV["BUNDLE_WITHOUT"] || "development"
       bundle_command = "bundle install --without #{bundle_without} --path vendor/bundle --binstubs vendor/bundle/bin"
 
       unless File.exist?("Gemfile.lock")
